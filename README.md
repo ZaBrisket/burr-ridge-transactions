@@ -20,6 +20,12 @@ con.execute("SELECT * FROM annual_summary").df()
 
 Regenerate the flat exports anytime from the warehouse with `make export`. The rest of this README covers (re)building the warehouse from source.
 
+### Analyze it
+
+- **[analysis/TRENDS.md](analysis/TRENDS.md)** — the latest statistically-grounded price-trend report (per-county appreciation rates with confidence intervals, charts, and caveats).
+- **[ROADMAP.md](ROADMAP.md)** — which Claude Code plugins and analysis workflows to use, and how to derive statistically significant trends from this data.
+- Regenerate the report yourself: `pip install -e ".[analysis]"` then `make analyze` (deterministic stats → `analysis/output/` + charts). In Claude Code, run `/trend-analysis` to fan out the analyst agents and rewrite `analysis/TRENDS.md`.
+
 ## Why this exists
 
 Burr Ridge straddles two counties with non-interoperable PIN schemes and very different open-data postures. No single registrar covers the whole village. This pipeline glues two free public sources into one analytical warehouse:
