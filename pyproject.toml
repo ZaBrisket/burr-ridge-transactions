@@ -21,6 +21,14 @@ dev = [
     "ipykernel>=6.29.0",
     "jupyter>=1.1.0",
 ]
+analysis = [
+    "statsmodels>=0.14.0",
+    "scipy>=1.13.0",
+    "scikit-learn>=1.5.0",
+    "pymannkendall>=1.4.3",
+    "linearmodels>=6.0",
+    "matplotlib>=3.9.0",
+]
 
 [tool.setuptools.packages.find]
-include = ["etl*"]
+include = ["etl*", "analysis*"]

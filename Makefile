@@ -1,7 +1,7 @@
 PY ?= .venv/bin/python
 
 .PHONY: help venv install bootstrap boundary parcels sales-cook sales-dupage \
-        crosscheck characteristics assessments validate export refresh-mydec refresh-cook \
+        crosscheck characteristics assessments validate export analyze refresh-mydec refresh-cook \
         refresh-parcels refresh full clean-warehouse
 
 help:
@@ -20,6 +20,7 @@ help:
 	@echo "  scrape-cook-treasurer Per-PIN Cook Treasurer scrape (~80m): 20-yr tax bill history"
 	@echo "  validate              Run sanity checks + recompute confidence scores"
 	@echo "  export                Write headline views to data/export/ as Parquet + CSV"
+	@echo "  analyze               Run statistical trend lanes -> analysis/output/ + charts/ (needs .[analysis])"
 	@echo "  refresh-mydec         Weekly: re-pull MyDec, refresh DuPage sales + crosscheck"
 	@echo "  refresh-cook          Monthly: re-pull CCAO sales/characteristics/assessments"
 	@echo "  refresh-parcels       Quarterly: re-pull parcels + boundary"
@@ -65,6 +66,9 @@ validate:
 
 export:
 	$(PY) -m etl.export
+
+analyze:
+	$(PY) -m analysis.run
 
 scrape-dupage-soa:
 	$(PY) -u -m etl.scrape_dupage_soa

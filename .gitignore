@@ -14,3 +14,6 @@ data/warehouse.duckdb.wal
 *.log
 .DS_Store
 full_project_tree.txt
+
+# Analysis intermediates (regenerable). Committed: analysis/TRENDS.md + analysis/charts/
+analysis/output/
