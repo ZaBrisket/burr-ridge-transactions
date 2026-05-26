@@ -1,5 +1,13 @@
 # Burr Ridge Residential Transaction Warehouse
 
+> **This is a published dataset, not a pipeline to run on open.**
+> The warehouse (`data/warehouse.duckdb`) and flat exports (`data/export/`) are already
+> built and committed — clone and analyze them directly. Everything below documents how
+> the data was assembled, for maintainers who want to *refresh* it. Do **not** re-run the
+> ETL unless the user explicitly asks: it makes live API calls, takes hours, and a fresh
+> clone can't run it as-is (it needs a Socrata token setup and manual Township Excel drops —
+> see Gotchas). For analysis, start with `data/export/`.
+
 Local DuckDB warehouse of Burr Ridge, IL residential sales (Cook + DuPage counties, 2013–present). Full architecture, schema, and source-by-source detail is in [README.md](README.md); this file covers only what's needed to run the pipeline correctly.
 
 ## Working directory
