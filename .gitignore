@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+
+# Secrets — never commit
+.env
+Chicago Data Portal API Key and App Token.PNG
+
+# Local / transient artifacts
+data/warehouse.duckdb.wal
+*.log
+.DS_Store
+full_project_tree.txt

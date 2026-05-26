@@ -1,0 +1,26 @@
+[project]
+name = "burr-ridge-transactions"
+version = "0.1.0"
+description = "Free, repeatable Burr Ridge IL residential property transaction warehouse (Cook + DuPage, 2013-present)."
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=1.1.0",
+    "pandas>=2.2.0",
+    "geopandas>=1.0.0",
+    "shapely>=2.0.0",
+    "pyarrow>=16.0.0",
+    "requests>=2.32.0",
+    "sodapy>=2.2.0",
+    "usaddress>=0.5.10",
+    "openpyxl>=3.1.0",
+    "tenacity>=9.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel>=6.29.0",
+    "jupyter>=1.1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["etl*"]
